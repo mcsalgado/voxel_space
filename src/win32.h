@@ -31,6 +31,8 @@ struct win32_application_t {
     s32 monitor_height;
     s32 vertical_refresh_rate;
 
+    SYSTEM_INFO system_info;
+
     BITMAPINFO gdi_info;
 };
 

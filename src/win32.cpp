@@ -152,6 +152,8 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
     win32_application.vertical_refresh_rate = GetDeviceCaps(win32_application.device_context, VREFRESH);
     ReleaseDC(win32_application.window_handle, win32_application.device_context);
 
+    GetSystemInfo(&win32_application.system_info);
+
     controls_t controls = {};
 
     while (win32_application.is_running) {
