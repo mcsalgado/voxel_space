@@ -139,7 +139,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
     }
 
     video.ybuffer = (u32 *) VirtualAlloc(0,
-                                         video.height*sizeof(u32),
+                                         video.width*sizeof(u32),
                                          MEM_RESERVE | MEM_COMMIT,
                                          PAGE_READWRITE);
 

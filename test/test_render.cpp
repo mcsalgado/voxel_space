@@ -101,7 +101,7 @@ int main(int argc, char **argv)
     video.height = SCREEN_HEIGHT;
     video.buffer = (u32 *) new u32[SCREEN_WIDTH][SCREEN_HEIGHT];
     u32 *comparison_buffer = (u32 *) new u32[SCREEN_WIDTH][SCREEN_HEIGHT];
-    video.ybuffer = new u32[SCREEN_HEIGHT];
+    video.ybuffer = new u32[SCREEN_WIDTH];
 
     RENDER_TEST(sanity_check,
                 render(&video, &state.camera, &map, state.debug_interface),
