@@ -1,0 +1,12 @@
+* text=auto
+
+*.gitattributes text
+.gitignore text
+*.md text
+
+*.cpp text
+*.h text
+
+*.py text
+
+*.h linguist-language=c++
