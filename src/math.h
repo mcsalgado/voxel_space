@@ -21,7 +21,7 @@ typedef double f64;
 
 #define ARRAY_LENGTH(array) (sizeof(array) / sizeof((array)[0]))
 
-inline u32 f32_to_s32(f32 x)
+inline s32 f32_to_s32(f32 x)
 {
     s32 ret = _mm_cvtss_si32(_mm_set_ss(x));
     return ret;
