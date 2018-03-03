@@ -1,6 +1,9 @@
 Voxel Space
 ===========
-[![Build Status](https://travis-ci.org/mcsalgado/voxel_space.svg?branch=master)](https://travis-ci.org/mcsalgado/voxel_space)
+|  |  |
+|:-----:|-------:|
+| **Windows** | [![Build status](https://ci.appveyor.com/api/projects/status/pqqgiy1cd0e77i4d?svg=true)](https://ci.appveyor.com/project/mcsalgado/voxel-space) |
+| **Linux** | [![Build Status](https://travis-ci.org/mcsalgado/voxel_space.svg?branch=master)](https://travis-ci.org/mcsalgado/voxel_space) |
 
 ![Voxel Space](https://i.imgur.com/CEvbciO.jpg)
 

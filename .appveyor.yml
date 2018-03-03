@@ -1,0 +1,15 @@
+version: '{build}'
+image: Visual Studio 2017
+install:
+- cmd: >-
+    call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+
+    choco install make --source cygwin
+build_script:
+- cmd: >-
+    md build
+
+    md bin
+
+    C:\cygwin64\bin\make.exe
+test: off
