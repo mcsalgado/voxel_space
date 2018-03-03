@@ -1,5 +1,6 @@
 Voxel Space
 ===========
+[![Build Status](https://travis-ci.org/mcsalgado/voxel_space.svg?branch=master)](https://travis-ci.org/mcsalgado/voxel_space)
 
 ![Voxel Space](https://i.imgur.com/CEvbciO.jpg)
 
