@@ -5,6 +5,14 @@
 
 #include "map.h"
 
+// TODO(mcsalgado): this too hacky, maybe I should have separate platform
+// specific headers for these things
+#ifdef __linux__
+void fopen_s(FILE **fp, const char *file_name, const char *mode) {
+    *fp = fopen(file_name, mode);
+}
+#endif
+
 bitmap8_t load_heightmap(const char *file_name)
 {
     bitmap8_t ret = {};

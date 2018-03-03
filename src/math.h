@@ -2,7 +2,11 @@
 #define __MATH_H__
 
 #include <stdint.h>
+#ifdef _WIN32
 #include <intrin.h>
+#elif __linux__
+#include <x86intrin.h>
+#endif
 
 // NOTE(mcsalgado): yes, I'm using a few SSE instructions in this header, fuck the police
 
