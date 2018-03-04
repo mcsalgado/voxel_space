@@ -46,7 +46,7 @@ inline u8 f32_to_u8(f32 x) {
     return ret;
 }
 
-inline f32 sqrt(f32 x)
+inline f32 _sqrt(f32 x)
 {
     f32 ret = _mm_cvtss_f32(_mm_sqrt_ss(_mm_set_ss(x)));
     return ret;
@@ -124,7 +124,7 @@ inline bool operator==(complex &z, complex w)
 
 inline f32 norm(complex c)
 {
-    f32 ret = sqrt(c.r*c.r + c.i*c.i);
+    f32 ret = _sqrt(c.r*c.r + c.i*c.i);
     return ret;
 }
 
