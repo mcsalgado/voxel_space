@@ -46,12 +46,25 @@ inline u8 f32_to_u8(f32 x) {
     return ret;
 }
 
-inline f32 _sqrt(f32 x)
+inline f32 sqrt(f32 x)
 {
     f32 ret = _mm_cvtss_f32(_mm_sqrt_ss(_mm_set_ss(x)));
     return ret;
 }
 
+// NOTE(mcsalgado): Remez approximation of degree 4 for [-.5, .5]
+inline f32 sin(f32 x)
+{
+    f32 ret = (-.16407949f*x*x + .99983873f)*x;
+    return ret;
+}
+
+inline f32 cos(f32 x)
+{
+    auto s = sin(x);
+    f32 ret = sqrt(1-(s*s));
+    return ret;
+}
 
 union complex {
     struct {
@@ -124,7 +137,7 @@ inline bool operator==(complex &z, complex w)
 
 inline f32 norm(complex c)
 {
-    f32 ret = _sqrt(c.r*c.r + c.i*c.i);
+    f32 ret = sqrt(c.r*c.r + c.i*c.i);
     return ret;
 }
 

@@ -1,7 +1,5 @@
 #include "precompiled.h"
 
-#include <math.h>
-
 #include "voxel_space.h"
 
 void initialize_state_and_map(state_t *state, map_t *map)
@@ -31,10 +29,10 @@ void process_controls(state_t *state, controls_t *controls, f32 dt)
         state->speed -= .05f*dt;
     }
     if (controls->turn_left.is_down) {
-        state->camera.direction *= complex{cosf(.02f*dt), sinf(.02f*dt)};
+        state->camera.direction *= complex{cos(.02f*dt), sin(.02f*dt)};
     }
     if (controls->turn_right.is_down) {
-        state->camera.direction *= complex{cosf(-.02f*dt), sinf(-.02f*dt)};
+        state->camera.direction *= complex{cos(-.02f*dt), sin(-.02f*dt)};
     }
 
     if (controls->show_display_map.is_pressed) {

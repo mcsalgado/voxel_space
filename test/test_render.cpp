@@ -72,7 +72,7 @@ f32 standard_deviation(f32 a[], u32 n)
     for (size_t i = 0; i < n; ++i) {
         ret += (a[i]-m)*(a[i]-m);
     }
-    ret = _sqrt(ret/n);
+    ret = sqrt(ret/n);
     return ret;
 }
 
