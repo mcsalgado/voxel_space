@@ -6,7 +6,7 @@ LFLAGS = -incremental:no -opt:ref
 LIBS = user32.lib gdi32.lib winmm.lib
 
 CXXFLAGS += -Od -Z7
-CXXFLAGS += -Oi -O2
+CXXFLAGS += -Oi -O2 -fp:fast -fp:except-
 
 SRCS = $(filter-out src/precompiled.cpp src/linux.cpp, $(wildcard src/*.cpp))
 OBJS = $(SRCS:src/%.cpp=build/%.obj)
