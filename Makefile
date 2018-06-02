@@ -8,7 +8,7 @@ LIBS = user32.lib gdi32.lib winmm.lib
 CXXFLAGS += -Od -Z7
 CXXFLAGS += -Oi -O2
 
-SRCS = $(filter-out src/precompiled.cpp, $(wildcard src/*.cpp))
+SRCS = $(filter-out src/precompiled.cpp src/linux.cpp, $(wildcard src/*.cpp))
 OBJS = $(SRCS:src/%.cpp=build/%.obj)
 
 RM = cmd.exe /C del
