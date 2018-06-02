@@ -106,16 +106,19 @@ void render(video_t *video, camera_t *camera, map_t *map, debug_interface_t debu
 
         for (u32 i = 0; i < video->width; ++i) {
             auto p = lerp(p0, p1, ((f32) i)*i_scale);
+
+            // NOTE(mcsalgado): wraparound map (toroidal world)
             auto map_x = f32_to_u32(p.x) % map->color.width;
             auto map_y = f32_to_u32(p.y) % map->color.height;
-            auto voxel_height = (f32) get_height(&map->height, map_x, map_y);
+
+            auto voxel_height = (f32) get_height(map, map_x, map_y);
             auto height_on_screen_f = ((voxel_height - camera->height)*camera->focal_length)/z + horizon;
             if (height_on_screen_f < 0) continue;
             auto height_on_screen = f32_to_u32(height_on_screen_f);
 
             if (height_on_screen >= video->height) height_on_screen = video->height-1;
 
-            auto strip_color = get_pixel(&map->color, map_x, map_y);
+            auto strip_color = get_color(map, map_x, map_y);
 
             // NOTE(mcsalgado): draw the vertical strip
             for (u32 j = ybuffer[i]; j < height_on_screen+1; ++j) {
@@ -124,7 +127,7 @@ void render(video_t *video, camera_t *camera, map_t *map, debug_interface_t debu
 
             if (height_on_screen > ybuffer[i]) ybuffer[i] = height_on_screen;
 
-            // TODO(mcsalgado): I don't like marking the map pixel here inside this function
+            // TODO(mcsalgado): I don't like marking the map fov pixels here inside this loop
             // but whatever for now
             if (debug_interface.is_map_shown) {
                 mark_pixel(&map->display, map_x, map_y, V4_BLUE);

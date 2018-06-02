@@ -33,15 +33,15 @@ bitmap8_t load_heightmap(const char *file_name);
 bitmap32_t load_colormap(const char *file_name);
 map_t load_maps(const char *height_file_name, const char *color_file_name);
 
-inline u8 get_height(bitmap8_t *bitmap, u32 x, u32 y)
+inline u8 get_height(map_t *map, u32 x, u32 y)
 {
-    u8 ret = bitmap->pixels[x + y*bitmap->width];
+    u8 ret = map->height.pixels[x + y*map->height.width];
     return ret;
 }
 
-inline u32 get_pixel(bitmap32_t *bitmap, u32 x, u32 y)
+inline u32 get_color(map_t *map, u32 x, u32 y)
 {
-    u32 ret = bitmap->pixels[x + y*bitmap->width];
+    u32 ret = map->color.pixels[x + y*map->color.width];
     return ret;
 }
 
