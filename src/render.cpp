@@ -114,9 +114,7 @@ void render(video_t *video, camera_t *camera, map_t *map, debug_interface_t debu
             auto voxel_height = (f32) get_height(map, map_x, map_y);
             auto height_on_screen_f = ((voxel_height - camera->height)*camera->focal_length)/z + horizon;
             if (height_on_screen_f < 0) continue;
-            auto height_on_screen = f32_to_u32(height_on_screen_f);
-
-            if (height_on_screen >= video->height) height_on_screen = video->height-1;
+            auto height_on_screen = MIN(f32_to_u32(height_on_screen_f), video->height-1);
 
             auto strip_color = get_color(map, map_x, map_y);
 

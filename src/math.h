@@ -24,6 +24,8 @@ typedef float f32;
 typedef double f64;
 
 #define ARRAY_LENGTH(array) (sizeof(array) / sizeof((array)[0]))
+#define MAX(a, b)  ((a) > (b) ? (a) : (b))
+#define MIN(a, b)  ((a) < (b) ? (a) : (b))
 
 inline s32 f32_to_s32(f32 x)
 {
