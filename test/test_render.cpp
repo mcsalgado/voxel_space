@@ -61,7 +61,7 @@ f32 mean(f32 a[], u32 n)
     for (size_t i = 0; i < n; ++i) {
         sum += a[i];
     }
-    float ret = sum/n;
+    f32 ret = sum/n;
     return ret;
 }
 

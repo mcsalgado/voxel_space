@@ -3,6 +3,7 @@
 
 const u32 SKY_COLOR = 0xFF60A0CC;
 const f32 FOCAL_LENGTH_COEFFICIENT = 350.f;
+const f32 LEVEL_OF_DETAIL_STEP = .002f;
 
 struct video_t {
     u32 *buffer;

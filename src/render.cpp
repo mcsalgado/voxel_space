@@ -132,7 +132,7 @@ void render(video_t *video, camera_t *camera, map_t *map, debug_interface_t debu
             }
         }
         z += dz;
-        dz += .002f;
+        dz += LEVEL_OF_DETAIL_STEP;
     }
 
     if (debug_interface.is_map_shown) {
